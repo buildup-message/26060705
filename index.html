@@ -97,8 +97,8 @@
                     </div>
                     
                     <div class="relative w-full aspect-video bg-[#4f4339] rounded-xl overflow-hidden shadow-inner flex items-center justify-center group">
-                        <!-- 실제 슬라이드 이미지 (깃허브 images 폴더 내의 slide1.png ~ slide15.png 호출) -->
-                        <img id="slide-image" src="images/slide1.png" class="w-full h-full object-contain transition-opacity duration-200" alt="설교 슬라이드">
+                        <!-- 실제 슬라이드 이미지 (경로 수정됨) -->
+                        <img id="slide-image" src="slide1.png" class="w-full h-full object-contain transition-opacity duration-200" alt="설교 슬라이드">
                         
                         <!-- 왼쪽 화살표 -->
                         <button onclick="prevSlide()" class="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/40 hover:bg-black/70 text-white rounded-full flex items-center justify-center backdrop-blur-sm transition-all z-10 shadow-md">
@@ -351,7 +351,8 @@
             // 부드러운 전환을 위한 투명도 조절
             img.style.opacity = '0.3'; 
             setTimeout(() => {
-                img.src = `images/slide${currentSlide}.png`;
+                // 이미지 경로에서 images/ 제거
+                img.src = `slide${currentSlide}.png`;
                 img.style.opacity = '1';
             }, 150);
             
